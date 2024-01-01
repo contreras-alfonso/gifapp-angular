@@ -1,0 +1,22 @@
+<div class="flex flex-wrap items-center justify-center mt-5 gap-5">
+  <div
+    *ngFor="let gif of gifs"
+    class="flex-none w-auto sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6"
+  >
+    <div class="bg-neutral-950 rounded-lg flex flex-col h-full overflow-hidden">
+      <shared-lazy-image [url]="gif.images.downsized_medium.url" [alt]="gif.title || 'No name'"></shared-lazy-image>
+      <!-- <img
+        class="w-full h-full object-cover"
+        [src]="gif.images.downsized_medium.url"
+
+  alt="{{ gif.title }}"
+        style="aspect-ratio: 1/1"
+      /> -->
+      <div class="p-3 flex-grow">
+        <p class="text-white text-center font-bold">
+          {{ gif.title || 'No title' | titlecase }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
